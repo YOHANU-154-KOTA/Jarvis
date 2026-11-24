@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#06111d">
+  <meta name="description" content="J.A.R.V.I.S personal voice assistant">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>J.A.R.V.I.S Mobile</title>
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">PERSONAL INTELLIGENCE SYSTEM</div>
+        <h1>J.A.R.V.I.S<span>_</span></h1>
+      </div>
+      <div class="top-status"><i id="statusDot"></i><span id="statusText">READY</span></div>
+    </header>
+
+    <section class="core-panel" aria-label="Assistant status">
+      <div class="rings" id="orb">
+        <div class="ring ring-a"></div><div class="ring ring-b"></div>
+        <div class="core">J</div>
+      </div>
+      <div class="state" id="stateText">SYSTEM STANDBY</div>
+      <p class="hint" id="hintText">Tap WAKE MODE, then say “Hey Jarvis”. Keep this app open.</p>
+    </section>
+
+    <section class="controls">
+      <button class="primary" id="wakeBtn" type="button">◉ ENABLE WAKE MODE</button>
+      <div class="control-row">
+        <button class="secondary" id="listenBtn" type="button">🎙 SPEAK COMMAND</button>
+        <button class="secondary" id="stopBtn" type="button">■ STOP</button>
+      </div>
+      <label class="language-label" for="language">VOICE LANGUAGE</label>
+      <select id="language">
+        <option value="en-IN">English (India)</option>
+        <option value="te-IN">తెలుగు (Telugu)</option>
+      </select>
+    </section>
+
+    <section class="reply-panel">
+      <div class="section-heading"><span>JARVIS RESPONSE</span><span id="clock">--:--:--</span></div>
+      <p id="reply" aria-live="polite">Good day. All local systems are ready.</p>
+      <div class="transcript"><span>HEARD</span><p id="heard">Waiting for your command.</p></div>
+    </section>
+
+    <section class="quick-grid" aria-label="Quick commands">
+      <button data-command="What is the time?">TIME</button>
+      <button data-command="What is the weather?">WEATHER</button>
+      <button data-command="Tell me a joke">JOKE</button>
+      <button data-command="Give me a daily quote">QUOTE</button>
+      <button data-command="Open YouTube">YOUTUBE</button>
+      <button data-command="Help">HELP</button>
+    </section>
+
+    <section class="memory-panel">
+      <div class="section-heading"><span>LOCAL MEMORY</span><button id="clearMemory" class="text-button">CLEAR</button></div>
+      <p id="memoryInfo">No saved notes yet.</p>
+      <div class="memory-actions">
+        <button class="secondary small" id="saveNote">SAVE LAST COMMAND AS NOTE</button>
+        <button class="secondary small" id="readNotes">READ NOTES</button>
+      </div>
+    </section>
+
+    <footer>J.A.R.V.I.S MOBILE • STAGE 1 • PRIVACY-FIRST LOCAL PROTOTYPE</footer>
+  </main>
+  <script src="./app.js" defer></script>
+</body>
+</html>
